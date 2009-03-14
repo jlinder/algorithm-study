@@ -150,7 +150,7 @@ public class MaxBinaryHeap {
 
   /**
    * Inserts a new value into the heap. The same value can be inserted into the heap multiple times
-   * (i.e. {@code insert() does not check if the heap already contains the value being inserted).   
+   * (i.e. {@code insert()} does not check if the heap already contains the value being inserted).   
    * <br>
    * <br>
    * If there is space in the heap for the new value, the run time of this method is
