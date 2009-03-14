@@ -1,0 +1,7 @@
+Most of this project is released under the BSD license, however the website is
+released under the GPL.  See the LICENSE.txt files for the individual
+sub-project implementations for details.  I.E.:
+
+    java/LICENSE.txt
+    website/LICENSE.txt
+
