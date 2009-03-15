@@ -28,15 +28,21 @@
 package com.algorithmstudy.datastructures;
 
 /**
- * TODO (jhl 2009.03.02): write this javadoc and review the rest of the documentation in this class.
+ * An implementation of a linked list with links in one direction. A singly linked list is
+ * particularly useful when implementing a stack or the elements that are commonly being accessed or
+ * inserted are near the front of the list.
  * 
  * @param <T>
+ *          The type to store in a {@code SinglyLinkedList} instance.
  */
 public class SinglyLinkedList<T> {
 
   private Node<T> head;
   private int size;
 
+  /**
+   * Construct a {@code SinglyLinkedList} instance.
+   */
   public SinglyLinkedList() {
     head = null;
     size = 0;
@@ -221,6 +227,12 @@ public class SinglyLinkedList<T> {
     return n;
   }
 
+  /**
+   * A node object to hold the values at each index.
+   * 
+   * @param <E>
+   *          The type to store in a {@code Node} instance.
+   */
   private class Node<E> {
     private E value;
     private Node<E> next;
@@ -234,7 +246,6 @@ public class SinglyLinkedList<T> {
       this.value = value;
       this.next = next;
     }
-
   }
 
 }
