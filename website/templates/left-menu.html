@@ -1,0 +1,66 @@
+<td class="left-menu">
+    <div id="left-menu">
+    <ul>
+        <li class="section">Algorithm Study</li>
+<%if ContentFileName="index"%>
+        <li class="current-page">Welcome</li>
+<%else %>
+        <li> <a href="index.html">Welcome</a> </li>
+<%endif %>
+
+<%if ContentFileName="news" %>
+        <li class="current-page">News</li>
+<%else %>
+        <li><a href="news.html">News</a></li>
+<%endif %>
+
+<%if ContentFileName="legal" %>
+        <li class="current-page">Legal</li>
+<%else %>
+        <li><a href="legal.html">Legal</a></li>
+<%endif %>
+        <li class="spacer">&nbsp;</li>
+
+        <li class="section">Download</li>
+        <li><a href="https://sourceforge.net/project/showfiles.php?group_id=255014">Releases</a></li>
+        <li class="spacer">&nbsp;</li>
+
+        <li class="section">Documentation</li>
+<%if ContentFileName="faq" %>
+        <li class="current-page">FAQ</li>
+<%else %>
+        <li><a href="faq.html">FAQ</a></li>
+<%endif %>
+        <li><a href="javadoc/">JavaDocs</a></li>
+        <li class="spacer">&nbsp;</li>
+
+        <li class="section">Contributing</li>
+        <li>
+            <a href="https://sourceforge.net/mail/?group_id=255014">
+                Mailing List
+            </a>
+        </li>
+
+<%if ContentFileName="source_code" %>
+        <li class="current-page">Source Code</li>
+<%else %>
+        <li><a href="source_code.html">Source Code</a></li>
+<%endif %>
+
+<%if ContentFileName="dev_policies" %>
+        <li class="current-page">Dev Policies</li>
+<%else %>
+        <li><a href="dev_policies.html">Dev Policies</a></li>
+<%endif %>
+
+<%if ContentFileName="contributors" %>
+        <li class="current-page">Contributors</li>
+<%else %>
+        <li><a href="contributors.html">Contributors</a></li>
+<%endif %>
+
+    </ul>
+
+    </div>
+</td>
+<td>

@@ -1,0 +1,109 @@
+<%var PageName="Code Style Guide"%>
+
+<h1> Code Style Guide </h1>
+
+<p>
+As one of the goals of the Algorithm Study project is for the source code to be
+read and studied, it is important that the code be formatted in a consistent
+manner.  This page describes the coding style used for all code committed to
+this project.  While the coding conventions may not match your preferred style,
+please follow them; a submitted patch that does not follow these coding
+conventions may be rejected based simply on formatting grounds.
+</p>
+
+<h2> Java Style </h2>
+
+<p>
+For the most part, the Java code in the Algorithm Study project follows Sun's
+<a href="http://java.sun.com/docs/codeconv">Java Code Conventions</a>.  The
+exceptions to Sun's Java code conventions are outlined below.
+</p>
+
+<h3>Indentation</h3>
+<ul>
+
+<li> Lines cannot exceed 100 characters </li>
+<li>
+  Indentation must be 2 spaces except when continuing an expression or
+  declaration from a previous line; in such cases, 4 spaces should be used.
+</li>
+<li>
+  <strong>No Tabs</strong>.  Tabs are simply not allowed.  All editors can be
+  configured to convert tabs to spaces.  Make your editor do so.
+</li>
+</ul>
+
+<h3> Comments </h3>
+<ul>
+<li>
+  <span class="bold">All</span> files must include javadocs, including unit
+  tests
+</li>
+<li>
+  Multi-line comments should use /* ... */, while single line comments should
+  use //
+</li>
+<li>
+  Do not use trailing comments (i.e. comments at the end of a line).  To
+  comment a line of code place the comment immediately above the line.
+</li>
+</ul>
+
+<h3> Declarations </h3>
+<ul>
+<li>
+  Use one declaration per line, and use the standard
+  <a href="http://java.sun.com/docs/codeconv">Java naming conventions</a>.
+</li>
+<li> Class level declarations belong at the top of the class definition. </li>
+</ul>
+
+<h3> Exceptions </h3>
+
+<ul>
+<li>
+  Never catch Exception or RuntimeException.  Always catch the most specific
+  type of exception thrown and handle the exception properly.
+</li>
+</ul>
+
+<h3> Whitespace </h3>
+<ul>
+<li>
+  Avoid ascii art.  This includes lining up method arguments that exceed a
+  single line, indenting the right side of declaration assignment operators
+  to make them all line up, and any other use of whitespace that does not
+  indicate a semantic change.  Using indentation to indicate that code is
+  within a code block (and within a certain scope) is required, of course.
+</li>
+<li> Avoid extra blank lines unless it improves readability. </li>
+
+</ul>
+
+<h3> Eclise Format Configuration </h3>
+
+<p>
+  An Ecplise formatter definintion file that (nearly) matches this policy is
+  included in the Algorithm Study's source repository at
+  <a href="http://algstudy.git.sourceforge.net/git/gitweb.cgi?p=algstudy;a=blob;f=java/misc/Eclipse_Formatter-alg-study_Conventions.xml;hb=HEAD">
+  java/misc/Eclipse_Formatter-alg-study_Conventions.xml
+  </a>.
+</p>
+
+<p>
+  To install the formatter:
+
+  <ol>
+    <li> Right click on project in package explorer, select "Properties" </li>
+    <li> expand "Java Code Style" </li>
+    <li> select "Formatter"</li>
+    <li> check "Enable project specific settings" </li>
+    <li>
+      import the
+  <a href="http://algstudy.git.sourceforge.net/git/gitweb.cgi?p=algstudy;a=blob;f=java/misc/Eclipse_Formatter-alg-study_Conventions.xml;hb=HEAD">
+        eclipse format configuration file
+      </a>
+    </li>
+  </ol>
+</p>
+
