@@ -8,7 +8,7 @@
 I.    PROJECT SUMMARY
 
       This is the Algorithm Study project, a project to provide sample
-      implementations of a large array of algorithms and data strucutres in a
+      implementations of a large array of algorithms and data structures in a
       variety of languages. Each implementation is accompanied by a discussion
       of the big O run time and memory limits. Some implementations include
       discussion of how the algorithm / data structure is commonly used and

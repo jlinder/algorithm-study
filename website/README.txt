@@ -13,7 +13,7 @@ I.    WEBSITE CONTENTS
       website in both its template form and generated form.  The contents of
       each subdirectory are:
 
-         bin - binary files; conatins the script to generated the full .html
+         bin - binary files; contains the script to generated the full .html
                files
          contents - the contents of each page in the website
          templates - the templates for the header, footer and menus

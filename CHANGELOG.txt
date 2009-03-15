@@ -1,0 +1,36 @@
+                        Algorithm Study - Change Log
+
+      TABLE OF CONTENTS
+
+   I. SUMMARY
+  II. CHANGE HISTORY
+
+
+I.    SUMMARY
+
+      This file contains a history of the changes made to the Algorithm Study
+      project for each public release.
+
+
+II.   CHANGE HISTORY
+
+      2008.03.14 - Algorithm Study v0.1.0
+
+      This is the initial release of the Algorithm Study project.  This release
+      contains Java implementations of the following algorithms:
+
+         Bubble Sort
+         Heap Sort
+         Insertion Sort
+         Merge Sort
+         Quick Sort
+         Reverse Word Order (of words in a string)
+
+      and the following data structures:
+
+         Max Binary Heap
+         Singly Linked List
+
+      Additionally, the website is also released.
+
+
