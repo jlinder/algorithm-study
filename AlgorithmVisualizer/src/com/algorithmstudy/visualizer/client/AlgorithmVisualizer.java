@@ -59,6 +59,7 @@ public class AlgorithmVisualizer implements EntryPoint {
     contentsPanel.setStyleName(STYLE_CONTENTS);
     contentsPanel.setHorizontalAlignment(VerticalPanel.ALIGN_LEFT);
     contentsPanel.setWidth("100%");
+    contentsPanel.setHeight("450px");
 
     Panel algorithmSelectionPanel = new AlgorithmSelectionPanel(contentsPanel);
     algorithmSelectionPanel.setStyleName(STYLE_TOP_BARS);
