@@ -1,0 +1,198 @@
+/** Add css rules here for your application. */
+
+.super-container {
+	border: solid black 1px;
+}
+
+.top-bars {
+	border-bottom: solid thin black;
+	padding: .2em .4em;
+}
+
+.contents {
+	padding: .2em .4em;
+}
+
+.bar-chart-visualizer {
+	padding: 1em .4em .2em;
+}
+
+.bar-chart-visualizer .moves-finished {
+	color: red;
+}
+
+.bar-chart-visualizer .invisible-bar {
+	background-color: white;
+}
+
+.bar-chart-visualizer .visible-bar {
+	background-color: black;
+}
+
+
+.bar-chart-visualizer .chart-single-50 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 800px;
+}
+
+.bar-chart-visualizer .chart-single-50 .invisible-bar ,
+.bar-chart-visualizer .chart-single-50 .visible-bar {
+	width: 8px;
+}
+
+
+.bar-chart-visualizer .chart-single-75 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 828px;
+}
+
+.bar-chart-visualizer .chart-single-75 .invisible-bar {
+	width: 5px;
+}
+
+.bar-chart-visualizer .chart-single-75 .visible-bar {
+	width: 6px;
+}
+
+
+.bar-chart-visualizer .chart-single-100 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 804px;
+}
+
+.bar-chart-visualizer .chart-single-100 .invisible-bar ,
+.bar-chart-visualizer .chart-single-100 .visible-bar {
+	width: 4px;
+}
+
+
+.bar-chart-visualizer .chart-single-150 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 756px;
+}
+
+.bar-chart-visualizer .chart-single-150 .invisible-bar {
+	width: 2px;
+}
+
+.bar-chart-visualizer .chart-single-150 .visible-bar {
+	width: 3px;
+}
+
+
+.bar-chart-visualizer .chart-single-200 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 806px;
+}
+
+.bar-chart-visualizer .chart-single-200 .invisible-bar ,
+.bar-chart-visualizer .chart-single-200 .visible-bar {
+	width: 2px;
+}
+
+
+.bar-chart-visualizer .chart-single-300 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 607px;
+}
+
+.bar-chart-visualizer .chart-single-300 .invisible-bar ,
+.bar-chart-visualizer .chart-single-300 .visible-bar {
+	width: 1px;
+}
+
+
+.bar-chart-visualizer .chart-single-400 {
+	border: solid black 1px;
+	padding: 4px;
+	height: 408px;
+	width: 807px;
+}
+
+.bar-chart-visualizer .chart-single-400 .invisible-bar ,
+.bar-chart-visualizer .chart-single-400 .visible-bar {
+	width: 1px;
+}
+
+
+.bar-chart-visualizer .chart-double-50 {
+	border: solid black 1px;
+	padding: 2px;
+	height: 404px;
+	width: 400px;
+}
+
+.bar-chart-visualizer .chart-double-50 .invisible-bar ,
+.bar-chart-visualizer .chart-double-50 .visible-bar {
+	width: 4px;
+}
+
+
+.bar-chart-visualizer .chart-double-75 {
+	border: solid black 1px;
+	padding: 2px;
+	height: 404px;
+	width: 377px;
+}
+
+.bar-chart-visualizer .chart-double-75 .invisible-bar {
+	width: 3px;
+}
+
+.bar-chart-visualizer .chart-double-75 .visible-bar {
+	width: 2px;
+}
+
+
+.bar-chart-visualizer .chart-double-100 {
+	border: solid black 1px;
+	padding: 2px;
+	height: 404px;
+	width: 402px;
+}
+
+.bar-chart-visualizer .chart-double-100 .invisible-bar ,
+.bar-chart-visualizer .chart-double-100 .visible-bar {
+	width: 2px;
+}
+
+
+.bar-chart-visualizer .chart-double-150 {
+	border: solid black 1px;
+	padding: 2px;
+	height: 404px;
+	width: 303px;
+}
+
+.bar-chart-visualizer .chart-double-150 .invisible-bar ,
+.bar-chart-visualizer .chart-double-150 .visible-bar {
+	width: 1px;
+}
+
+
+.bar-chart-visualizer .chart-double-200 {
+	border: solid black 1px;
+	padding: 2px;
+	height: 404px;
+	width: 403px;
+}
+
+.bar-chart-visualizer .chart-double-200 .invisible-bar ,
+.bar-chart-visualizer .chart-double-200 .visible-bar {
+	width: 1px;
+}
+
+
+
