@@ -43,7 +43,7 @@ public class AlgorithmVisualizer implements EntryPoint {
    */
   public void onModuleLoad() {
 
-    Label programName = new Label("Algorithm Visualizer");
+    Label programName = new Label("Algorithm Visualizer (v0.2.0)");
     HTML algstudyDotCom = new HTML();
     algstudyDotCom.setHTML("<a href='http://www.algorithmstudy.com'>AlgorithmStudy.com</a>");
 
