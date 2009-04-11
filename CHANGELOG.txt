@@ -14,6 +14,19 @@ I.    SUMMARY
 
 II.   CHANGE HISTORY
 
+      2008.04.11 - Algorithm Study v0.2.0
+
+      The new functionality in this release is the Algorithm Visualizer program.
+      It contains visualizations of the following algorithms:
+
+         Bubble Sort
+         Insertion Sort
+         Quick Sort
+         Heap Sort
+
+      The website has been updated to reflect inclusion of this new program.
+
+
       2008.03.14 - Algorithm Study v0.1.0
 
       This is the initial release of the Algorithm Study project.  This release
