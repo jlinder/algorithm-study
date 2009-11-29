@@ -29,11 +29,9 @@ package com.algorithmstudy.datastructures;
 
 import java.util.EmptyStackException;
 
-import org.junit.Test;
-
-import com.algorithmstudy.datastructures.SinglyLinkedList;
-
 import junit.framework.TestCase;
+
+import org.junit.Test;
 
 public class TestSinglyLinkedList extends TestCase {
 
@@ -45,6 +43,7 @@ public class TestSinglyLinkedList extends TestCase {
     assertEquals(0, l.size());
     checkGetError(l, 0);
     checkGetError(l, -1);
+    checkPeekError(l);
     checkPopError(l);
     checkRemoveError(l, 0);
     checkRemoveError(l, -1);
@@ -52,16 +51,17 @@ public class TestSinglyLinkedList extends TestCase {
     checkInsertError(l, 1, 20);
 
     l.insert(-232, 0);
+    assertEquals((Integer) (-232), l.peek());
     l.remove(0);
     // [ ]
-    
+
     l.append(324);
     assertEquals(1, l.size());
     assertEquals((Integer) 324, l.get(0));
     assertEquals((Integer) 324, l.pop());
     assertEquals(0, l.size());
     // [ 324 ]
-    
+
     l.append(4);
     l.append(5);
     l.append(2);
@@ -124,6 +124,14 @@ public class TestSinglyLinkedList extends TestCase {
       l.insert(value, index);
       fail();
     } catch (IndexOutOfBoundsException e) {
+    }
+  }
+
+  private void checkPeekError(SinglyLinkedList<Integer> l) {
+    try {
+      l.peek();
+      fail();
+    } catch (EmptyStackException e) {
     }
   }
 

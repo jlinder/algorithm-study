@@ -44,7 +44,7 @@ import java.util.EmptyStackException;
  * @param <T>
  *          The type to store in a {@code SinglyLinkedList} instance.
  */
-public class SinglyLinkedList<T> {
+public class SinglyLinkedList<T> implements Stack<T> {
 
   private Node<T> head;
   private int size;
@@ -175,7 +175,8 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Pops a value from the front of the list. The element is removed from the list.
+   * Pops a value from the front of the list. The element is removed from the list (as defined in
+   * the {@code Stack} interface).
    * 
    * @return The value at the front of the list. If no values are in the list, then an {@code
    *         EmptyStackException} is thrown.
@@ -191,6 +192,23 @@ public class SinglyLinkedList<T> {
     head = n.next;
     size--;
     return n.value;
+  }
+
+  /**
+   * Takes a peek at the element at the head of the list. The element is left in the list (as
+   * defined in the {@code Stack} interface). <br/>
+   * <br/>
+   * 
+   * This is an {@code O(1)} operation.
+   * 
+   * @return The element at the head of the list.
+   */
+  public T peek() {
+    if (0 == size) {
+      throw new EmptyStackException();
+    }
+
+    return head.value;
   }
 
   /**
