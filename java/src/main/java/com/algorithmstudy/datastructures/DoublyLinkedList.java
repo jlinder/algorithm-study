@@ -52,7 +52,7 @@ import java.util.NoSuchElementException;
  * @param <T>
  *          The type to store in a {@code DoublyLinkedList} instance.
  */
-public class DoublyLinkedList<T> implements Stack<T> {
+public class DoublyLinkedList<T> implements Stack<T>, Queue<T> {
 
   private Node<T> head;
   private Node<T> tail;
@@ -96,6 +96,27 @@ public class DoublyLinkedList<T> implements Stack<T> {
     }
 
     size++;
+  }
+
+  /**
+   * Removes the value from the front of the queue.
+   * 
+   * @return The value at the front of the list (queue).
+   * @throws NoSuchElementException
+   *           if the list is empty.
+   */
+  public T dequeue() {
+    return pop();
+  }
+
+  /**
+   * Places the value at the end of the list (i.e., the end of the queue).
+   * 
+   * @param value
+   *          The value to be placed at the end of the queue.
+   */
+  public void enqueue(T value) {
+    append(value);
   }
 
   /**
@@ -216,7 +237,7 @@ public class DoublyLinkedList<T> implements Stack<T> {
    */
   public T pop() {
     if (0 == size) {
-      throw new NoSuchElementException("There are no values to pop.");
+      throw new NoSuchElementException();
     }
 
     Node<T> n = head;

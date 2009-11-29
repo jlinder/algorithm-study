@@ -36,6 +36,38 @@ import org.junit.Test;
 public class TestDoublyLinkedList extends TestCase {
 
   @Test
+  public void testDoublyLinkedListAsQueue() {
+    DoublyLinkedList<Integer> l = new DoublyLinkedList<Integer>();
+
+    checkDequeueError(l);
+
+    assertEquals(0, l.size());
+
+    l.enqueue(23);
+    assertEquals(1, l.size());
+
+    assertEquals((Integer) 23, l.dequeue());
+    assertEquals(0, l.size());
+
+    l.enqueue(23);
+    l.enqueue(24);
+    l.enqueue(25);
+    assertEquals(3, l.size());
+
+    assertEquals((Integer) 23, l.dequeue());
+    assertEquals(2, l.size());
+
+    assertEquals((Integer) 24, l.dequeue());
+    assertEquals(1, l.size());
+
+    assertEquals((Integer) 25, l.dequeue());
+    assertEquals(0, l.size());
+
+    checkDequeueError(l);
+
+  }
+
+  @Test
   public void testDoublyLinkedListAsStack() {
     DoublyLinkedList<Integer> l = new DoublyLinkedList<Integer>();
 
@@ -55,14 +87,20 @@ public class TestDoublyLinkedList extends TestCase {
     l.push(25);
     assertEquals(3, l.size());
 
+    assertEquals((Integer) 25, l.peek());
     assertEquals((Integer) 25, l.pop());
     assertEquals(2, l.size());
 
+    assertEquals((Integer) 24, l.peek());
     assertEquals((Integer) 24, l.pop());
     assertEquals(1, l.size());
 
+    assertEquals((Integer) 23, l.peek());
     assertEquals((Integer) 23, l.pop());
     assertEquals(0, l.size());
+
+    checkPopError(l);
+    checkPeekError(l);
 
   }
 
@@ -165,7 +203,7 @@ public class TestDoublyLinkedList extends TestCase {
     }
   }
 
-  private void checkPeekError(DoublyLinkedList<Integer> l) {
+  private void checkPeekError(Stack<Integer> l) {
     try {
       l.peek();
       fail();
@@ -173,7 +211,15 @@ public class TestDoublyLinkedList extends TestCase {
     }
   }
 
-  private void checkPopError(DoublyLinkedList<Integer> l) {
+  private void checkDequeueError(Queue<Integer> l) {
+    try {
+      l.dequeue();
+      fail();
+    } catch (NoSuchElementException e) {
+    }
+  }
+
+  private void checkPopError(Stack<Integer> l) {
     try {
       l.pop();
       fail();

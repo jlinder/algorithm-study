@@ -30,44 +30,33 @@ package com.algorithmstudy.datastructures;
 import java.util.NoSuchElementException;
 
 /**
- * A simple stack interface.
+ * A simple queue interface.
  * 
  * @param <T>
- *          The type to store in the {@code Stack}.
+ *          The type to store in the {@code Queue}.
  */
-public interface Stack<T> {
+public interface Queue<T> {
 
   /**
-   * Push an element onto the stack.
-   * 
-   * @param element
-   *          The element to push onto the stack.
-   */
-  public void push(T element);
-
-  /**
-   * Pop an element off the stack. The element that is popped off the stack is removed from the
-   * stack.
-   * 
-   * @return The element popped off the stack.
-   * @throws NoSuchElementException
-   *           if the stack is empty.
-   */
-  public T pop() throws NoSuchElementException;
-
-  /**
-   * Takes a peek at the element at the top of the stack. The element is returned by the method but
-   * not removed from the stack.
-   * 
-   * @return The element at the top of the stack.
-   * @throws NoSuchElementException
-   *           if the stack is empty.
-   */
-  public T peek() throws NoSuchElementException;
-
-  /**
-   * Returns the number of elements in the stack.
+   * Returns the number of elements in the Queue.
    */
   public int size();
+
+  /**
+   * Adds the specified element at the end of the queue.
+   * 
+   * @param element
+   *          The element to place at the end of the queue.
+   */
+  public void enqueue(T element);
+
+  /**
+   * Removes the element at the front of the queue.
+   * 
+   * @return The element at the front of the queue.
+   * @throws NoSuchElementException
+   *           if the queue is empty.
+   */
+  public T dequeue() throws NoSuchElementException;
 
 }
