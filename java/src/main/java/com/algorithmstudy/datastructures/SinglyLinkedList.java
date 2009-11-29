@@ -27,10 +27,19 @@
  */
 package com.algorithmstudy.datastructures;
 
+import java.util.EmptyStackException;
+
 /**
  * An implementation of a linked list with links in one direction. A singly linked list is
  * particularly useful when implementing a stack or the elements that are commonly being accessed or
  * inserted are near the front of the list.
+ * 
+ * Some notes:
+ * <ul>
+ * <li>This list implementation is not thread safe</li>
+ * <li>A reference to the head element is maintained but not a reference to the tail element; this
+ * means some operations must run in {@code O(n)} time instead of {@code O(1)} time</li>
+ * </ul>
  * 
  * @param <T>
  *          The type to store in a {@code SinglyLinkedList} instance.
@@ -49,19 +58,22 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Gets the number of elements in the list.
-   * 
-   * @return The number of elements in the list.
+   * Returns the number of elements in the list.
    */
   public int size() {
     return size;
   }
 
   /**
-   * Appends {@code value} to the end of the list.
+   * Appends {@code value} to the end of the list. <br/>
+   * <br/>
+   * 
+   * Note: a reference to the tail of the list is not maintained (only a reference to the head is
+   * maintained), this method must search to the end of the list to find where to insert the new
+   * value. Thus, this is an {@code O(n)} operation.
    * 
    * @param value
-   *          The value to be appended to the list.
+   *          The value to be appended to the end of the list.
    */
   public void append(T value) {
     Node<T> n = new Node<T>(value);
@@ -75,13 +87,18 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Get the value at index {@code i} in the list.
+   * Get the value at index {@code i} in the list. <br/>
+   * <br/>
+   * 
+   * Note: since only a reference to the head of the list is maintained, the entire list up to the
+   * specified location must be traversed before finding the specified node. Since the specified
+   * location may be at the end of the list, this is an {@code O(n)} operation.
    * 
    * @param i
    *          The index at which the desired value resides. A zero (0) based number. It must follow
-   *          the following rule: {@code 0 <= i < list.size()} where {@code list.size()} is the size
-   *          of the linked list; if {@code i} is not within those bounds, an
-   *          {@code IndexOutOfBoundsException} will be thrown.
+   *          this rule: {@code 0 <= i < list.size()} where {@code list.size()} is the size of the
+   *          linked list; if {@code i} is not within those bounds, an {@code
+   *          IndexOutOfBoundsException} will be thrown.
    * @return The value in index {@code i} in the list.
    * @throws IndexOutOfBoundsException
    *           Thrown if the index is not within the prescribed limits.
@@ -96,8 +113,11 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Inserts {@code value} into the list at the index {@code i}. If {@code i} is greater than the
-   * size of the list, the value is simply added to the end of the list.
+   * Inserts {@code value} into the list at the index {@code i}. <br/>
+   * <br/>
+   * 
+   * Note: the node at the specified location must be found before the new value can be inserted.
+   * Since the specified location may be at the end of the list, this is an {@code O(n)} operation.
    * 
    * @param value
    *          The value to insert.
@@ -134,9 +154,11 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Push a value to the front of the list. The value is placed at the head of the list to achieve a
-   * {@code O(1)} run time (vs. a {@code O(n)} run time if it were placed at the end of the list).
-   * {@code push()} can be used in conjunction with {@code pop()} to act as a stack.
+   * Push a value to the front of the list.<br/>
+   * <br/>
+   * 
+   * Since the value is placed at the head of the list, insertion time is an {@code O(1)} operation
+   * (contrasted with an {@code O(n)} operation if it were placed at the end of the list).
    * 
    * @param value
    *          The value to push to the front of the list.
@@ -153,16 +175,16 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Pops a value from the front of the list.
+   * Pops a value from the front of the list. The element is removed from the list.
    * 
-   * @return The value at the front of the list. If no values are in the list, then an
-   *         {@code IndexOutOfBoundsException} is thrown.
-   * @throws IndexOutOfBoundsException
+   * @return The value at the front of the list. If no values are in the list, then an {@code
+   *         EmptyStackException} is thrown.
+   * @throws EmptyStackException
    *           Thrown if the list is empty.
    */
   public T pop() {
     if (0 == size) {
-      throw new IndexOutOfBoundsException("No values in list; can't pop a value from the list");
+      throw new EmptyStackException();
     }
 
     Node<T> n = head;
@@ -172,13 +194,18 @@ public class SinglyLinkedList<T> {
   }
 
   /**
-   * Removes the element at index {@code i} in the list.
+   * Removes the element at index {@code i} in the list. <br/>
+   * <br/>
+   * 
+   * Note: If the element being removed is the last element in the list, all {@code n} elements in
+   * the list will be traversed. If the element is at any other location in the list, fewer than
+   * {@code n} elements will be traversed. Thus, this is an {@code O(n)} operation.
    * 
    * @param i
    *          The index for which the value should be removed. A zero (0) based number. It must
    *          follow the following rule: {@code 0 <= i < list.size()} where {@code list.size()} is
-   *          the size of the linked list; if {@code i} is not within those bounds, an
-   *          {@code IndexOutOfBoundsException} will be thrown.
+   *          the size of the linked list; if {@code i} is not within those bounds, an {@code
+   *          IndexOutOfBoundsException} will be thrown.
    * @return The value at index {@code i}.
    * @throws IndexOutOfBoundsException
    *           Thrown if the index is not within the prescribed limits.
@@ -207,8 +234,8 @@ public class SinglyLinkedList<T> {
    * 
    * @param index
    *          The index for which a node should be found in the list. The value is zero (0) based
-   *          and must be within the following limits: {@code 0 <= index < SizeOfList} where
-   *          {@code SizeOfList} is the number of elements in the list.
+   *          and must be within the following limits: {@code 0 <= index < SizeOfList} where {@code
+   *          SizeOfList} is the number of elements in the list.
    * @return The node at position {@code index} in the list. Null if no nodes are in the list or
    *         index is greater than the size of the list.
    */
@@ -242,10 +269,6 @@ public class SinglyLinkedList<T> {
       next = null;
     }
 
-    protected Node(E value, Node<E> next) {
-      this.value = value;
-      this.next = next;
-    }
   }
 
 }

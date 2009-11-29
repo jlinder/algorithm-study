@@ -27,6 +27,8 @@
  */
 package com.algorithmstudy.datastructures;
 
+import java.util.EmptyStackException;
+
 import org.junit.Test;
 
 import com.algorithmstudy.datastructures.SinglyLinkedList;
@@ -46,13 +48,20 @@ public class TestSinglyLinkedList extends TestCase {
     checkPopError(l);
     checkRemoveError(l, 0);
     checkRemoveError(l, -1);
+    checkInsertError(l, -1, 20);
+    checkInsertError(l, 1, 20);
 
+    l.insert(-232, 0);
+    l.remove(0);
+    // [ ]
+    
     l.append(324);
     assertEquals(1, l.size());
     assertEquals((Integer) 324, l.get(0));
     assertEquals((Integer) 324, l.pop());
     assertEquals(0, l.size());
-
+    // [ 324 ]
+    
     l.append(4);
     l.append(5);
     l.append(2);
@@ -69,9 +78,11 @@ public class TestSinglyLinkedList extends TestCase {
     assertEquals((Integer) 2, l.remove(l.size() - 1));
     // [ 4, 5, 80 ]
 
+    checkInsertError(l, -5234, -1);
     l.insert(-35, 0);
     l.insert(472, 4);
     l.insert(29908, 4);
+    checkInsertError(l, -54, 100);
     // [ -35, 4, 5, 80, 29908, 472 ]
 
     assertEquals((Integer) 4, l.get(1));
@@ -108,11 +119,19 @@ public class TestSinglyLinkedList extends TestCase {
     }
   }
 
+  private void checkInsertError(SinglyLinkedList<Integer> l, Integer value, int index) {
+    try {
+      l.insert(value, index);
+      fail();
+    } catch (IndexOutOfBoundsException e) {
+    }
+  }
+
   private void checkPopError(SinglyLinkedList<Integer> l) {
     try {
       l.pop();
       fail();
-    } catch (IndexOutOfBoundsException e) {
+    } catch (EmptyStackException e) {
     }
   }
 
