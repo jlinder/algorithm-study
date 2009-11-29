@@ -1,6 +1,6 @@
 package com.algorithmstudy.datastructures;
 
-import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 /**
  * A simple stack interface.
@@ -23,20 +23,20 @@ public interface Stack<T> {
    * stack.
    * 
    * @return The element popped off the stack.
-   * @throws EmptyStackException
+   * @throws NoSuchElementException
    *           Thrown if the stack is empty.
    */
-  public T pop() throws EmptyStackException;
+  public T pop() throws NoSuchElementException;
 
   /**
    * Takes a peek at the element at the top of the stack. The element is returned by the method but
    * not removed from the stack.
    * 
    * @return The element at the top of the stack.
-   * @throws EmptyStackException
+   * @throws NoSuchElementException
    *           Thrown if the stack is empty.
    */
-  public T peek() throws EmptyStackException;
+  public T peek() throws NoSuchElementException;
 
   /**
    * Returns the number of elements in the stack.

@@ -33,18 +33,47 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
-public class TestSinglyLinkedList extends TestCase {
+public class TestDoublyLinkedList extends TestCase {
 
   @Test
-  public void testSinglyLinkedList() {
+  public void testDoublyLinkedListAsStack() {
+    DoublyLinkedList<Integer> l = new DoublyLinkedList<Integer>();
 
-    SinglyLinkedList<Integer> l = new SinglyLinkedList<Integer>();
+    checkPopError(l);
+    checkPeekError(l);
+
+    assertEquals(0, l.size());
+
+    l.push(23);
+    assertEquals(1, l.size());
+
+    assertEquals((Integer) 23, l.pop());
+    assertEquals(0, l.size());
+
+    l.push(23);
+    l.push(24);
+    l.push(25);
+    assertEquals(3, l.size());
+
+    assertEquals((Integer) 25, l.pop());
+    assertEquals(2, l.size());
+
+    assertEquals((Integer) 24, l.pop());
+    assertEquals(1, l.size());
+
+    assertEquals((Integer) 23, l.pop());
+    assertEquals(0, l.size());
+
+  }
+
+  @Test
+  public void testDoublyLinkedList() {
+
+    DoublyLinkedList<Integer> l = new DoublyLinkedList<Integer>();
 
     assertEquals(0, l.size());
     checkGetError(l, 0);
     checkGetError(l, -1);
-    checkPeekError(l);
-    checkPopError(l);
     checkRemoveError(l, 0);
     checkRemoveError(l, -1);
     checkInsertError(l, -1, 20);
@@ -58,18 +87,28 @@ public class TestSinglyLinkedList extends TestCase {
     l.append(324);
     assertEquals(1, l.size());
     assertEquals((Integer) 324, l.get(0));
-    assertEquals((Integer) 324, l.pop());
+    assertEquals((Integer) 324, l.remove(0));
     assertEquals(0, l.size());
     // [ 324 ]
 
     l.append(4);
-    l.append(5);
-    l.append(2);
-    // [ 4, 5, 2 ]
+    assertEquals(1, l.size());
+    assertEquals((Integer) 4, l.get(0));
+    // [ 4 ]
 
+    l.append(5);
+    assertEquals(2, l.size());
+    assertEquals((Integer) 4, l.get(0));
+    assertEquals((Integer) 5, l.get(1));
+    // [ 4, 5 ]
+
+    l.append(2);
+    assertEquals(3, l.size());
     assertEquals((Integer) 4, l.get(0));
     assertEquals((Integer) 5, l.get(1));
     assertEquals((Integer) 2, l.get(2));
+    // [ 4, 5, 2 ]
+
     l.insert(80, 2);
     // [ 4, 5, 80, 2 ]
 
@@ -105,13 +144,12 @@ public class TestSinglyLinkedList extends TestCase {
     checkGetError(l, 0);
     checkGetError(l, 1);
     checkGetError(l, -1);
-    checkPopError(l);
     checkRemoveError(l, 0);
     checkRemoveError(l, 1);
     checkRemoveError(l, -1);
   }
 
-  private void checkGetError(SinglyLinkedList<Integer> l, int index) {
+  private void checkGetError(DoublyLinkedList<Integer> l, int index) {
     try {
       l.get(index);
       fail();
@@ -119,7 +157,7 @@ public class TestSinglyLinkedList extends TestCase {
     }
   }
 
-  private void checkInsertError(SinglyLinkedList<Integer> l, Integer value, int index) {
+  private void checkInsertError(DoublyLinkedList<Integer> l, Integer value, int index) {
     try {
       l.insert(value, index);
       fail();
@@ -127,7 +165,7 @@ public class TestSinglyLinkedList extends TestCase {
     }
   }
 
-  private void checkPeekError(SinglyLinkedList<Integer> l) {
+  private void checkPeekError(DoublyLinkedList<Integer> l) {
     try {
       l.peek();
       fail();
@@ -135,7 +173,7 @@ public class TestSinglyLinkedList extends TestCase {
     }
   }
 
-  private void checkPopError(SinglyLinkedList<Integer> l) {
+  private void checkPopError(DoublyLinkedList<Integer> l) {
     try {
       l.pop();
       fail();
@@ -143,7 +181,7 @@ public class TestSinglyLinkedList extends TestCase {
     }
   }
 
-  private void checkRemoveError(SinglyLinkedList<Integer> l, int index) {
+  private void checkRemoveError(DoublyLinkedList<Integer> l, int index) {
     try {
       l.remove(index);
       fail();
