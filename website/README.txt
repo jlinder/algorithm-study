@@ -42,8 +42,9 @@ III.  GENERATING WEBSITE DOCUMENTS
       As indicated in section II above, the contents of the website are
       maintained as template files for ease of maintenance.  To generate the
       full website, the script 'bin/buildpages.py' must be run from the bin
-      directory.  Simply cd into the bin directory and run the command:
+      directory.  Simply:
 
+         cd bin
          ./buildpages.py
 
 
