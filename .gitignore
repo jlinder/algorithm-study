@@ -1,0 +1,6 @@
+# Anything JetBrains-related
+.idea
+
+# Python-related
+*.pyc
+
