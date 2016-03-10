@@ -4,5 +4,6 @@ for the individual sub-project implementations for details.  I.E.:
 
     AlgorithmVisualizer/LICENSE.txt
     java/LICENSE.txt
+    python/LICENSE.txt
     website/LICENSE.txt
 
