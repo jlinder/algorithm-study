@@ -101,7 +101,6 @@ class CutRodBase(object):
         """
         self.values = None
         self.solutions = None
-        self._maximum_rod_length = length
         self._generate_solution(prices, length)
 
     def _generate_solution(self, prices, length):
@@ -144,7 +143,7 @@ class CutRodBase(object):
         return solution
 
     def _check_valid_length(self, length):
-        if length < 0 or length > self._maximum_rod_length:
+        if length < 0 or length > len(self.solutions):
             raise ValueError
 
     def __str__(self):
